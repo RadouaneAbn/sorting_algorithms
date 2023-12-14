@@ -10,7 +10,9 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t swaps_count, i;
-	int temp_swap;
+
+	if (!array)
+		return;
 
 	swaps_count = 1;
 	while (swaps_count)
@@ -21,12 +23,27 @@ void bubble_sort(int *array, size_t size)
 			if (array[i] > array[i + 1])
 			{
 				swaps_count += 1;
-				temp_swap = array[i];
-				array[i] = array[i + 1];
-				array[i + 1] = temp_swap;
+				swap_int(array + i, array + i + 1);
 				print_array(array, size);
 			}
 			i++;
 		}
 	}
+}
+
+/**
+ * swap_int - swaps two integers.
+ * @a: first integer address.
+ * @b: second integer address.
+ */
+void swap_int(int *a, int *b)
+{
+	int temp;
+
+	if (!a || !b)
+		return;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
