@@ -71,7 +71,7 @@ void insertion_sort_gapped(int *array, size_t size, size_t gap)
 		while (k < size)
 		{
 			j = k - gap;
-			while (j >= i && array[j + gap] < array[j])
+			while (j >= (int) i && array[j + gap] < array[j])
 			{
 				swap_int(array + j + gap, array + j);
 				j -= gap;
