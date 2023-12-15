@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * shell_sort - Sorts an array of integers in ascending order
@@ -45,17 +46,15 @@ void shell_sort(int *array, size_t size)
  */
 size_t initial_knuth_gap(size_t size)
 {
-	size_t gap, ceiled_peak;
+	size_t gap, peak;
 
-	ceiled_peak = size / 3;
-	if (size % 3)
-		ceiled_peak += 1;
+	peak = size / 3;
 
 	gap = 1;
-	while (gap <= ceiled_peak)
+	while (gap < peak)
 		gap = gap * 3 + 1;
 
-	return ((gap - 1) / 3);
+	return (gap);
 }
 
 /**
