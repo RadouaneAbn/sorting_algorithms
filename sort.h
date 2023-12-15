@@ -26,8 +26,13 @@ void swap_int(int *a, int *b);
 /* Main Functions prototypes */
 void bubble_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
+void cocktail_sort_list(listint_t **list);
 
 /* Utility Functions for Shell Sort */
 size_t initial_knuth_gap(size_t size);
+
+/* Utility Functions for Cocktail Shaker Sort */
+void swap_right(listint_t *cursor, listint_t **head);
+void swap_left(listint_t *cursor, listint_t **head);
 
 #endif /* SORT_H */
