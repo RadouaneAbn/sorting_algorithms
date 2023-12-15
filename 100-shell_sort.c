@@ -18,7 +18,10 @@ void shell_sort(int *array, size_t size)
 
 	while (knuth_gap > 0)
 	{
-		insertion_sort_gaped(array, size, knuth_gap);
+		if (knuth_gap != 1)
+			insertion_sort_gapped(array, size, knuth_gap);
+		else
+			insertion_sort(array, size);
 		print_array(array, size);
 		knuth_gap = (knuth_gap - 1) / 3;
 	}
@@ -48,14 +51,14 @@ size_t initial_knuth_gap(size_t size)
 }
 
 /**
- * insertion_sort_gaped - Apply insertion sort on sublists of @array
+ * insertion_sort_gapped - Apply insertion sort on sublists of @array
  * using @gap value.
  *
  * @array: The array to be sorted.
  * @size: Number of elements in @array.
  * @gap: gap length.
  */
-void insertion_sort_gaped(int *array, size_t size, size_t gap)
+void insertion_sort_gapped(int *array, size_t size, size_t gap)
 {
 	size_t i, k, end_index;
 	int j;
@@ -74,6 +77,30 @@ void insertion_sort_gaped(int *array, size_t size, size_t gap)
 				j -= gap;
 			}
 			k += gap;
+		}
+		i++;
+	}
+}
+
+/**
+ * insertion_sort - Apply insertion sort on  @array
+ *
+ * @array: The array to be sorted.
+ * @size: Number of elements in @array.
+ */
+void insertion_sort(int *array, size_t size)
+{
+	size_t i;
+	int j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i - 1;
+		while (j >= 0 && array[j + 1] < array[j])
+		{
+			swap_int(array + j + 1, array + j);
+			j--;
 		}
 		i++;
 	}

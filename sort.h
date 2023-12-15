@@ -28,8 +28,9 @@ void swap_int(int *a, int *b);
 void bubble_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 
-
+/* Utility Functions for Shell Sort */
 size_t initial_knuth_gap(size_t size);
-void insertion_sort_gaped(int *array, size_t size, size_t gap);
+void insertion_sort_gapped(int *array, size_t size, size_t gap);
+void insertion_sort(int *array, size_t size);
 
 #endif /* SORT_H */
