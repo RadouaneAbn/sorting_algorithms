@@ -41,6 +41,8 @@ int array_max(int *array, size_t size);
 int *create_counting_array(int *array, size_t size);
 int *create_sorted_array(int *array, size_t size, int *counting_array);
 
-
+/* Utility Functions for Insertion Sort */
+void swap(listint_t **list, listint_t *a, listint_t *b);
+void insertion_sort_list(listint_t **list);
 
 #endif /* SORT_H */
