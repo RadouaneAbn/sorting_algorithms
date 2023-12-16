@@ -1,1 +1,1 @@
-Sorting Algorithms and Big O notation project\n
+Sorting Algorithms and Big O notation project
