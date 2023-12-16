@@ -45,4 +45,7 @@ int *create_sorted_array(int *array, size_t size, int *counting_array);
 void swap(listint_t **list, listint_t *a, listint_t *b);
 void insertion_sort_list(listint_t **list);
 
+/* Utility Functions for selection Sort */
+void selection_sort(int *array, size_t size);
+
 #endif /* SORT_H */
