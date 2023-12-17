@@ -1,13 +1,23 @@
 #include "sort.h"
+
 #define leftChild(i) (2 * i + 1)
-#define righttChild(i) (2 * i + 2)
-#define Parent(i) ((i - 1) / 2)
 
-void builtmaxheap(int *array, size_t n)
+/**
+ * heap_sort - This function sort an array using heap sort algorithm
+ * @array: The array
+ * @size: The size of the array
+ */
+
+void heap_sort(int *array, size_t size)
 {
-	size_t root, child;
-	size_t start = n / 2, end = n;
+	size_t root, child, start, end;
 
+	if (!array && size < 2)
+		return;
+
+
+	start = size / 2;
+	end = size;
 	while (end > 1)
 	{
 		if (start > 0)
@@ -16,7 +26,7 @@ void builtmaxheap(int *array, size_t n)
 		{
 			end--;
 			swap_int(&array[end], &array[0]);
-			print_array(array, n);
+			print_array(array, size);
 		}
 
 		root = start;
@@ -28,20 +38,14 @@ void builtmaxheap(int *array, size_t n)
 
 			if (array[root] < array[child])
 			{
-				swap_int(&array[root], & array[child]);
-				print_array(array, n);
+				swap_int(&array[root], &array[child]);
+				print_array(array, size);
 				root = child;
 			}
 			else
 				break;
 		}
 	}
-}
-
-void heap_sort(int *array, size_t size)
-{
-	if (array && size > 1)
-		builtmaxheap(array, size);
 }
 
 /**
