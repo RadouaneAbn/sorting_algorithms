@@ -58,4 +58,9 @@ void merge(int *array, size_t left, size_t right);
 void quick_sort(int *array, size_t size);
 void sort_quick_Lomuto(int *arr, size_t left, size_t right, size_t size);
 
+/* Utility Functions for heap Sort */
+void builtmaxheap(int *array, size_t n);
+void heap_sort(int *array, size_t size);
+void siftdown(int *array, size_t root, size_t end);
+
 #endif /* SORT_H */
