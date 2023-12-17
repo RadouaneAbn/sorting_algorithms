@@ -2,7 +2,8 @@
 #define SORT_H
 
 /* Libraries */
-#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -47,5 +48,10 @@ void insertion_sort_list(listint_t **list);
 
 /* Utility Functions for selection Sort */
 void selection_sort(int *array, size_t size);
+
+/* Utility Functions for merge Sort */
+void merge_sort(int *array, size_t size);
+void top_down_merge(int *array, size_t left, size_t right);
+void merge(int *array, size_t left, size_t right);
 
 #endif /* SORT_H */
