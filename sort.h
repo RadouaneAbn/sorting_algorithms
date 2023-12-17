@@ -54,4 +54,8 @@ void merge_sort(int *array, size_t size);
 void top_down_merge(int *array, size_t left, size_t right);
 void merge(int *array, size_t left, size_t right);
 
+/* Utility Functions for quick Sort */
+void quick_sort(int *array, size_t size);
+void sort_quick_Lomuto(int *arr, size_t left, size_t right, size_t size);
+
 #endif /* SORT_H */
