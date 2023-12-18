@@ -17,7 +17,7 @@ void print_sec(char *str, int *array, size_t start, size_t end,
 {
 	size_t i, sec = end - start + 1;
 
-	printf("%s [%ld,%ld] (%s):\n", str, sec, size, dir == AC ? "UP" : "DOWN");
+	printf("%s [%ld/%ld] (%s):\n", str, sec, size, dir == AC ? "UP" : "DOWN");
 	for (i = start; i <= end; i++)
 	{
 		printf("%d", array[i]);
