@@ -65,4 +65,7 @@ void heap_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 void hoare_sort(int *array, size_t left, size_t right, size_t size);
 
+/* Utility Functions for bitonic Sort */
+void bitonic_sort(int *array, size_t size);
+
 #endif /* SORT_H */
